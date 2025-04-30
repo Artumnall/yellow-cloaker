@@ -125,8 +125,8 @@
         "filters": {
             "allowed": {
                 "countries": [
-                    "UA",
-                    "BY"
+                
+                    "BR"
                 ],
                 "os": [
                     "Android",
