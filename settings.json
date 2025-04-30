@@ -77,11 +77,11 @@
                 }
             },
             "redirect": {
-                "urls": [
-                    "https://yandex.ru"
-                ],
-                "type": "303"
-            }
+    "urls": [
+        "https://metodosuarenda.systeme.io/metodo"
+    ],
+    "type": "303"
+}
         },
         "jsconnect": "replace"
     },
