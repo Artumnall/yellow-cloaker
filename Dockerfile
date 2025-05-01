@@ -1,16 +1,21 @@
 FROM php:8.1-apache
 
-# Instala o Composer
+# Instala o unzip e o Composer
 RUN apt-get update && apt-get install -y unzip \
-  && curl -sS https://getcomposer.org/installer | php \
-  && mv composer.phar /usr/local/bin/composer
+    && curl -sS https://getcomposer.org/installer | php \
+    && mv composer.phar /usr/local/bin/composer
 
-# Copia os arquivos do projeto
-COPY . /var/www/html/
+# Define o diretório de trabalho
+WORKDIR /var/www/html
 
-# Vai para o diretório do app e instala dependências do Composer
-WORKDIR /var/www/html/
+# Copia apenas os arquivos do Composer primeiro (melhora cache do Docker)
+COPY composer.json ./
+
+# Instala as dependências do Composer
 RUN composer install
+
+# Agora copia o restante do projeto
+COPY . .
 
 # Corrige permissões
 RUN chown -R www-data:www-data /var/www/html
