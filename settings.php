@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/vendor/autoload.php';
 use Noodlehaus\Config;
 require_once 'config/ConfigInterface.php';
 require_once 'config/AbstractConfig.php';
