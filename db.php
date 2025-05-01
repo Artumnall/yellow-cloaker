@@ -1,7 +1,5 @@
 <?php
-require_once __DIR__ . "/db/Exceptions/IOException.php";
-require_once __DIR__ . "/db/Exceptions/JsonException.php";
-require_once __DIR__ . "/db/Classes/IoHelper.php";
+
 require_once __DIR__ . "/db/SleekDB.php";
 require_once __DIR__ . "/db/Store.php";
 require_once __DIR__ . "/db/QueryBuilder.php";
